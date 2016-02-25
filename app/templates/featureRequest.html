@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Feature Request</h1>
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <table>
+      <tr> 
+        <td>{{ form.title.label }}</td>
+        <td>{{ form.title() }}</td>
+        <td>{% for error in form.title.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
+        <td>{{ form.description.label }}</td>
+        <td>{{ form.description() }} </td>
+        <td>{% for error in form.description.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
+        <td>{{ form.client.label }}</td>
+        <td>{{ form.client() }}</td>
+        <td>{% for error in form.client.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
+        <td>{{ form.targetDate.label }}</td>
+        <td>{{ form.targetDate() }}</td>
+        <td>{% for error in form.targetDate.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
+        <td>{{ form.ticketURL.label }}</td>
+        <td>{{ form.ticketURL() }}</td>
+        <td>{% for error in form.ticketURL.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
+        <td>{{ form.productArea.label }}</td>
+        <td>{{ form.productArea() }}</td>
+        <td>{% for error in form.productArea.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+    </table>
+    <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}
