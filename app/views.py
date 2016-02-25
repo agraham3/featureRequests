@@ -12,8 +12,9 @@ def index():
 def featureRequest():
   form = FeatureRequest()
   if form.validate_on_submit():
-    flash('Login requested for OpenID="%s", remember_me="%s"' % 
-          (form.openid.data, str(form.remember_me.data)))
+    flash('Form Data < %s > < %s > < %s >  < %s > < %s > < %s > ' 
+          % (form.title.data, form.description.data, form.client.data, 
+             form.targetDate.data, form.ticketURL.data, form.productArea.data))
     return redirect('/index')
 
   return render_template('featureRequest.html', 
