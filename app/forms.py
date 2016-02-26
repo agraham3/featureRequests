@@ -15,9 +15,10 @@ class FeatureRequestForm(Form):
                                 [validators.Required(), validators.NumberRange(min=1)])
   targetDate = DateField('Target Date (yy/mm/dd)',
                          format='%y/%m/%d')
+  ticketURLMessage = 'Must be a url in form of (you may add an s after http): http://www.*.*'
   ticketURL = StringField('Ticket URL', 
-                          [validators.Regexp(urlRegex, 
-                           message='Must be a url in form of (you may add an s after http): http://www.*.*')])
+                          [validators.Optional(),
+                          validators.Regexp(urlRegex, message=ticketURLMessage)])
   productArea = SelectField('Product', choices=[('polices', 'Policies'),
                                                 ('billing', 'Billing'),
                                                 ('claims', 'Claims'),

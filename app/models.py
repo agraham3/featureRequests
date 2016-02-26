@@ -11,4 +11,14 @@ class FeatureRequestDB(db.Model):
   productArea = db.Column(db.String(10), index=True, unique=False)
 
   def __repr__(self):
-    return '<Title: %r> <Date: %r>' % (self.title, self.targetDate)
+    p = "Title: %r\n \
+    Description: %r\n \
+    Client: %r\n \
+    Client Priority Number: %r\n \
+    Target Date: %r\n \
+    Ticket URL: %r\n \
+    Product Area: %r\n" % (self.title, self.description, 
+                         self.client, self.clientPriority,
+                         self.targetDate, self.ticketURL, 
+                         self.productArea)
+    return p
