@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect
 from app import app
-from .forms import FeatureRequest
+from .forms import FeatureRequestForm
 
 @app.route('/')
 @app.route('/index')
@@ -10,7 +10,7 @@ def index():
 # To change: from tutorial
 @app.route('/featureRequest', methods=['GET', 'POST'])
 def featureRequest():
-  form = FeatureRequest()
+  form = FeatureRequestForm()
   if form.validate_on_submit():
     flash('Form Data < %s > < %s > < %s >  < %s > < %s > < %s > < %s >' 
           % (form.title.data, form.description.data, 

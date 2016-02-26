@@ -3,7 +3,7 @@ from wtforms import validators, StringField, \
                     TextAreaField, SelectField, \
                     DateField, IntegerField
 
-class FeatureRequest(Form):
+class FeatureRequestForm(Form):
   urlRegex = '^https?://www.[\w||\d||.||-||/]+.[\w||\d||.||-||/]+$'
   title = StringField('Title', [validators.Required(), validators.length(max=50)])
   description = TextAreaField('Description', [validators.Required(),
