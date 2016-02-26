@@ -12,9 +12,11 @@ def index():
 def featureRequest():
   form = FeatureRequest()
   if form.validate_on_submit():
-    flash('Form Data < %s > < %s > < %s >  < %s > < %s > < %s > ' 
-          % (form.title.data, form.description.data, form.client.data, 
-             form.targetDate.data, form.ticketURL.data, form.productArea.data))
+    flash('Form Data < %s > < %s > < %s >  < %s > < %s > < %s > < %s >' 
+          % (form.title.data, form.description.data, 
+             form.client.data, form.clientPriority.data,
+             form.targetDate.data, form.ticketURL.data, 
+             form.productArea.data))
     return redirect('/index')
 
   return render_template('featureRequest.html', 

@@ -26,6 +26,13 @@
             {% endfor %}</td>
       </tr>
       <tr>
+        <td>{{ form.clientPriority.label }}</td>
+        <td>{{ form.clientPriority() }}</td>
+        <td>{% for error in form.clientPriority.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}</td>
+      </tr>
+      <tr>
         <td>{{ form.targetDate.label }}</td>
         <td>{{ form.targetDate() }}</td>
         <td>{% for error in form.targetDate.errors %}
