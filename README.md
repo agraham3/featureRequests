@@ -6,7 +6,6 @@ To Create the database file and repository folder run:
 ./db_create.py
 To migrate the database run:
 ./db_migrate.py
-To upgrade the current database to the new model run:
-./db_upgrade.py
-To downgrade the current database to a previous version run:
-./db_downgrade.py
+To remove the database:
+rm app.db
+rm -rf db_repository

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Feature Request</h1>
+<h1>Request A Feature</h1>
 <form action="" method="post" name="login">
     {{ form.hidden_tag() }}
     <table>
@@ -54,6 +54,6 @@
             {% endfor %}</td>
       </tr>
     </table>
-    <p><input type="submit" value="Submit"></p>
+    <p><input type="submit" value="Submit" class="btn btn-lg btn-primary"></p>
 </form>
 {% endblock %}
