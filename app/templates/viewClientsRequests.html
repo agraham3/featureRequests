@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>View Requests</h1>
+<div class="page-header">
+  <h1>View Requests</h1>
+</div>
+
 <form action="" method="post" name="login">
   {{ form.hidden_tag() }}
   <table>
@@ -17,8 +20,32 @@
   </table>
 </form><br>
 
-{% if client %}
-  {{ client }}
+{% if clientName %}
+  {% if clientList %}
+    <h2>{{ clientName }}</h2>
+    <table class="table table-condensed">
+    <tr>
+      <th>Priority Number</th>
+      <th>Target Date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Ticket URL</th>
+      <th>Product Area<th>
+    </tr>
+    {% for item in clientList %}
+      <tr>
+        <td>{{ item.priorityNumber }}</td>
+        <td>{{ item.targetDate }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.ticketURL }}</td>
+        <td>{{ item.productArea.name }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    <p>Client ({{ clientName }}) has no requests.</p>
+  {% endif %}
 {% endif %}
 
 {% endblock %}
