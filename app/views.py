@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect
 from app import app, db
-from .forms import FeatureRequestForm
+from .forms import FeatureRequestForm, ClientRequestForm
 from .controller import insert_db
 
 @app.route('/')
@@ -16,5 +16,15 @@ def featureRequest():
     return redirect('/index')
 
   return render_template('featureRequest.html', 
-                         title='Feature Request', 
                          form=form)
+
+@app.route('/viewClientsRequests', methods=['GET', 'POST'])
+def viewClientsRequests():
+  form = ClientRequestForm()
+  client = ''
+  if form.validate_on_submit():
+    client = form.client.data # to change to database info
+
+  return render_template('viewClientsRequests.html',
+                         form=form,
+                         client=client)

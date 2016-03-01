@@ -23,3 +23,8 @@ class FeatureRequestForm(Form):
                                                 ('billing', 'Billing'),
                                                 ('claims', 'Claims'),
                                                 ('Reports', 'Reports')])
+
+class ClientRequestForm(Form):
+  client = SelectField('Client', choices=[('Client A', 'Client A'), 
+                                          ('Client B', 'Client B'),
+                                          ('Client C', 'Client C')])
